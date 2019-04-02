@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script>
+            function refresh(){
+                var textcontent = document.getElementById('editor').value;
+                document.getElementById('vizu').srcdoc = textcontent;
+            }
+        </script>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .main{
+                background: #ecf0f1;
+                width: 100%;
+                height: 100%;
+                display: inline-flex;
+            }
+            #editor{
+                width: 100%;
+                height: 95%;
+                margin: 10px;
+                padding: 5px;
+                font-size: 150%;
+            }
+            #vizu{
+                background: white;
+                border: none;
+                width: 100%;
+                height: 95%;
+                margin: 10px;
+                border: 1px solid #3498db;
+                overflow:hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <textarea id="editor" onkeyup="refresh()" placeholder="codifique..."></textarea>
+            <iframe id="vizu"></iframe>
+        </div>
+    </body>
+</html>
